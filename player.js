@@ -5,7 +5,7 @@ var rank = require('./rank');
 
 module.exports = {
 
-    VERSION: "Default JavaScript folding player",
+    VERSION: "Defaultest default",
 
     bet_request: function (game_state, bet) {
         return this.strategy1(game_state, bet);
