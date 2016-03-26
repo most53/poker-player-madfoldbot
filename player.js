@@ -92,7 +92,7 @@ module.exports = {
             return 100;
         }
 
-        return call;
+        return 0;
     },
 
     isAllIn: function (game_state) {
