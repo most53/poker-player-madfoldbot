@@ -48,6 +48,7 @@ module.exports = {
         }
 
 
+        console.log('PAIRS');
         console.log(pairs);
         bet(current_net);
     },
