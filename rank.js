@@ -52,6 +52,7 @@ function rank(cards) {
     var suitCounts = count(bySuit)
     var result = []
 
+
     var numberOfPairs = 0
     var numberOfThrees = 0
     var hasFlush = false
