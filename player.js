@@ -19,21 +19,17 @@ module.exports = {
 
         if (our_cards[0]['rank'] == our_cards[1]['rank']) {
             console.log('HAS PAIR!');
-            current_bet += 300;
+            current_bet = 300;
         }
 
+        console.log('OUR BET:' + current_bet);
         bet(current_bet);
-
-        return;
-
-        console.log(this.strategy1(game_state, bet));
-        //this.getPairs(game_state);
-        return this.strategy1(game_state, bet);
     },
 
     showdown: function (game_state) {
 
-    },
+    }
+    /*
 
     isHigh: function (card) {
         return ['J', 'Q', 'K', 'A'].indexOf(card) == -1 ? false : true;
@@ -80,7 +76,7 @@ module.exports = {
         console.log(game_state.community_cards);
 
 
-    }
+    }*/
 };
 
 
