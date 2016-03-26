@@ -53,6 +53,7 @@ module.exports = {
 
         console.log("PAIRS");
         console.log(cards);
+        console.log(game_state.community_cards);
 
 
     }
