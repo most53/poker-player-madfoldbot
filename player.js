@@ -3,7 +3,7 @@ module.exports = {
     VERSION: "Default JavaScript folding player",
 
     bet_request: function (game_state, bet) {
-        var current_bet = bet;
+        var current_bet = 0;
         var our_cards = [];
 
         for (var p in game_state.players) {
