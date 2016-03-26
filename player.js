@@ -4,7 +4,7 @@ module.exports = {
 
     bet_request: function (game_state, bet) {
 
-        var current_net = bet;
+        var current_bet = bet;
         var our_cards = [];
         var community_cards = game_state.community_cards;
 
@@ -21,14 +21,12 @@ module.exports = {
 
         if (our_cards[0]['rank'] == our_cards[1]['rank']) {
             console.log('HAS PAIR!');
-            current_net += 300;
-            return;
+            current_bet += 300;
         }
 
 
 
         var pairs = {};
-
         pairs[our_cards[0]['rank']] = 1;
 
         if (typeof (our_cards[1]['rank']) == 'undefined') {
@@ -50,7 +48,7 @@ module.exports = {
 
         console.log('PAIRS');
         console.log(pairs);
-        bet(current_net);
+        bet(current_bet);
     },
 
     showdown: function (game_state) {
