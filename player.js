@@ -41,7 +41,7 @@ module.exports = {
 
     strategy1: function(game_state, bet) {
         var current_bet = game_state.pot;
-        var our_cards = [];
+        var our_cards = {};
 
         for (var p in game_state.players) {
             if (typeof game_state.players[p]['hole_cards'] != 'undefined') {
