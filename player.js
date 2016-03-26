@@ -65,13 +65,7 @@ module.exports = {
                     return call;
                 }
 
-                if (compute_chip_factor(game_state) > 3) {
-                    console.log('CHIP FACTOR');
-                    return call;
-                }
-                else {
-                    return 0;
-                }
+                return 0;
             }
         }
 
