@@ -3,6 +3,7 @@ module.exports = {
     VERSION: "Default JavaScript folding player",
 
     bet_request: function (game_state, bet) {
+        this.getPairs(game_state);
         return this.strategy1(game_state, bet);
     },
 
@@ -17,7 +18,6 @@ module.exports = {
     strategy1: function(game_state, bet) {
         var current_bet = bet;
         var our_cards = [];
-        var community_cards = game_state.community_cards;
 
         for (var p in game_state.players) {
             if (typeof game_state.players[p]['hole_cards'] != 'undefined') {
@@ -38,7 +38,21 @@ module.exports = {
         return bet(current_bet);
     },
 
-    getPairs: function() {
+    getPairs: function(game_state) {
+        var cards;
+        var community_cards = game_state.community_cards;
+
+
+        for (var p in game_state.players) {
+            if (typeof game_state.players[p]['hole_cards'] != 'undefined') {
+                cards = game_state.players[p]['hole_cards'];
+            }
+        }
+
+        cards.concat(community_cards);
+
+        console.log(cards);
+
 
     }
 };
