@@ -4,7 +4,10 @@ module.exports = {
 
     bet_request: function (game_state, bet) {
 
+        var current_net = bet;
         var our_cards = [];
+        var community_cards = game_state.community_cards;
+
         for (var p in game_state.players) {
             if (typeof game_state.players[p]['hole_cards'] != 'undefined') {
                 our_cards = game_state.players[p]['hole_cards'];
@@ -18,15 +21,42 @@ module.exports = {
 
         if (our_cards[0]['rank'] == our_cards[1]['rank']) {
             console.log('HAS PAIR!');
-            bet(300);
+            current_net += 300;
             return;
         }
 
-        //console.log(bet);
-        bet(0);
+
+
+        var pairs = {};
+
+        pairs[our_cards[0]['rank']] = 1;
+
+        if (typeof (our_cards[1]['rank']) == 'undefined') {
+            pairs[our_cards[1]['rank']] = 1;
+        } else {
+            pairs[our_cards[1]['rank']]++;
+        }
+
+        for (var cc in community_cards) {
+            if (typeof(pairs[community_cards[cc]['rank']]) == 'undefined') {
+                pairs[community_cards[cc]['rank']] = 1;
+            } else {
+                pairs[community_cards[cc]['rank']]++;
+            }
+        }
+
+
+        console.log(pairs);
+        bet(current_net);
     },
 
     showdown: function (game_state) {
 
+    },
+
+    isHigh: function (card) {
+        return ['J', 'Q', 'K', 'A'].indexOf(card) == -1 ? false : true;
     }
 };
+
+
