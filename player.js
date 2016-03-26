@@ -101,11 +101,11 @@ module.exports = {
         }
 
         if (our_hand.contains('two_pairs')) {
-            return 500;
+            return (call + 500);
         }
 
         if (our_hand.contains('pair')) {
-            return 10;
+            return (call + 10);
         }
 
         return 0;
