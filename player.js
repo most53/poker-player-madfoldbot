@@ -3,6 +3,29 @@ module.exports = {
     VERSION: "Default JavaScript folding player",
 
     bet_request: function (game_state, bet) {
+        var current_bet = bet;
+        var our_cards = [];
+
+        for (var p in game_state.players) {
+            if (typeof game_state.players[p]['hole_cards'] != 'undefined') {
+                our_cards = game_state.players[p]['hole_cards'];
+            }
+        }
+        console.log('OUR CARDS');
+        console.log(our_cards);
+
+        console.log('COMMUNITY CARDS');
+        console.log(game_state);
+
+        if (our_cards[0]['rank'] == our_cards[1]['rank']) {
+            console.log('HAS PAIR!');
+            current_bet += 300;
+        }
+
+        bet(current_bet);
+
+        return;
+
         console.log(this.strategy1(game_state, bet));
         //this.getPairs(game_state);
         return this.strategy1(game_state, bet);
