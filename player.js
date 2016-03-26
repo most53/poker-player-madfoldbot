@@ -6,7 +6,7 @@ Array.prototype.contains = function (element) {
 
 module.exports = {
 
-    VERSION: "MadFoldBot v2.2",
+    VERSION: "MadFoldBot v2.3",
 
     bet_request: function (game_state, bet) {
         return this.strategy1(game_state, bet);
