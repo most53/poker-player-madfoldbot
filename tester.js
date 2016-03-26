@@ -20,8 +20,8 @@ player.bet_request({
             "stack": 1000,
             "status": "active",
             "bet": 10,
-            "hole_cards": [{rank: '3', suit: 'hearts'},
-                {rank: '3', suit: 'hearts'}],
+            "hole_cards": [{rank: '5', suit: 'hearts'},
+                {rank: '5', suit: 'hearts'}],
             "version": "Version name 2",
             "id": 1
         }
@@ -35,19 +35,20 @@ player.bet_request({
     "orbits": 0,
     "dealer": 0,
     "community_cards": [                            // Finally the array of community cards.
-
+/*
         {
             "rank": "A",
             "suit": "hearts"
         },
         {
             "rank": "4",
-            "suit": "hearts"
+            "suit": "spades"
         },
         {
             "rank": "6",
             "suit": "hearts"
         }
+        */
     ],
     "current_buy_in": 100,
     "pot": 0

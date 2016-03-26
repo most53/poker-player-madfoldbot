@@ -36,7 +36,9 @@ module.exports = {
                 console.log('LAME CARDS');
                 return 0;
             } else {
-                if (toNum(myself.hole_cards[1].rank) > 9 && toNum(myself.hole_cards[0].rank) > 9) {
+                if (toNum(myself.hole_cards[1].rank) > 9 && toNum(myself.hole_cards[0].rank) > 9 ||
+                    (myself.hole_cards[1].suit == myself.hole_cards[1].suit)
+                ) {
                     console.log('HIGH CARDS. DOING CALL');
                     return call;
                 }
@@ -113,7 +115,11 @@ function toNum(c) {
 }
 
 function lameCards(cards) {
-    if (cards[0].rank == 'A' || cards[1].rank == 'A') {
+    if (
+        toNum(cards[0].rank) >= 12 || toNum(cards[1].rank) >= 12
+    ) {
+        return false;
+    } else if (cards[0].rank == 'A' || cards[1].rank == 'A') {
         return false;
     }
     else if (
