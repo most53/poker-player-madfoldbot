@@ -51,6 +51,7 @@ module.exports = {
 
         cards.concat(community_cards);
 
+        console.log("PAIRS");
         console.log(cards);
 
 
