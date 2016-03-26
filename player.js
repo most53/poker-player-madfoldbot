@@ -10,7 +10,7 @@ module.exports = {
                 our_cards = game_state.players[p]['hole_cards'];
             }
         }
-        console.log('OUR CARDS: ' + our_cards);
+        console.log(our_cards);
 
         if (our_cards[0]['rank'] == our_cards[1]['rank']) {
             console.log('HAS PAIR!');
