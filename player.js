@@ -59,7 +59,7 @@ module.exports = {
             current_bet += 100;
         }
 
-        this.getPairs();
+        this.getPairs(game_state);
 
         return bet(current_bet);
     },
