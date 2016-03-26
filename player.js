@@ -31,7 +31,7 @@ module.exports = {
         var isAllIn = this.isAllIn(game_state);
         console.log('CURRENT CALL: ' + call);
 
-        if (isAllIn) {
+        if (false && isAllIn) {
             console.log("WARNING - ALL IN!!!");
 
             if (game_state.community_cards.length < 1) {
@@ -42,7 +42,6 @@ module.exports = {
                     (myself.hole_cards[0].rank == 'A' && myself.hole_cards[1].rank == 'K') ||
                     (myself.hole_cards[0].rank == 'K' && myself.hole_cards[1].rank == 'A')
                 ) {
-                    return call;
                 } else {
                     return 0;
                 }
