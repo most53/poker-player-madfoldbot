@@ -5,6 +5,7 @@ module.exports = {
 
   bet_request: function(game_state, bet) {
     console.log(game_state);
+    console.log(bet);
     bet(0);
   },
 
