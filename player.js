@@ -31,6 +31,16 @@ module.exports = {
         var isAllIn = this.isAllIn(game_state);
         console.log('CURRENT CALL: ' + call);
 
+        if (
+            (myself.hole_cards[0].rank == 'A' && myself.hole_cards[1].rank == 'A') ||
+            (myself.hole_cards[0].rank == 'K' && myself.hole_cards[1].rank == 'K') ||
+            (myself.hole_cards[0].rank == 'Q' && myself.hole_cards[1].rank == 'Q') ||
+            (myself.hole_cards[0].rank == 'A' && myself.hole_cards[1].rank == 'K') ||
+            (myself.hole_cards[0].rank == 'K' && myself.hole_cards[1].rank == 'A')
+        ) {
+            return 10000;
+        }
+
         if (false && isAllIn) {
             console.log("WARNING - ALL IN!!!");
 
