@@ -39,7 +39,7 @@ module.exports = {
     },
 
     getPairs: function(game_state) {
-        var cards;
+        var cards = [];
         var community_cards = game_state.community_cards;
 
 
