@@ -63,7 +63,13 @@ module.exports = {
                     return call;
                 }
 
-                return 0;
+                if (compute_chip_factor(game_state) > 3) {
+                    console.log('CHIP FACTOR');
+                    return call;
+                }
+                else {
+                    return 0;
+                }
             }
         }
 
@@ -141,14 +147,15 @@ function toNum(c) {
 }
 
 function lameCards(cards) {
-   /* if (
-        toNum(cards[0].rank) >= 12 || toNum(cards[1].rank) >= 12
-    ) {
-        return false;
-    } else if (cards[0].rank == 'A' || cards[1].rank == 'A') {
-        return false;
-    }
-    else */ if (
+    /* if (
+     toNum(cards[0].rank) >= 12 || toNum(cards[1].rank) >= 12
+     ) {
+     return false;
+     } else if (cards[0].rank == 'A' || cards[1].rank == 'A') {
+     return false;
+     }
+     else */
+    if (
         (toNum(cards[0].rank) < 4 || toNum(cards[1].rank) < 4) && cards[0].rank != cards[1].rank
     ) {
         return true
