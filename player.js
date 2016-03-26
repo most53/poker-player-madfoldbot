@@ -112,6 +112,10 @@ module.exports = {
             return (call + 10);
         }
 
+        if (toNum(myself.hole_cards[1].rank) > 9 && toNum(myself.hole_cards[0].rank) > 9) {
+            return call;
+        }
+
         return 0;
     },
 
