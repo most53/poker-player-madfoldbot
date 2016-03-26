@@ -73,6 +73,10 @@ module.exports = {
                     return myself.stack;
                 }
 
+                if (myself.hole_cards[0].suit == myself.hole_cards[1].suit && ((toNum(myself.hole_cards[1].rank) > 9 || toNum(myself.hole_cards[0].rank) > 9))) {
+                    return call;
+                }
+
                 if (compute_chip_factor(game_state) > 3) {
                     console.log('CHIP FACTOR');
                     return call;
