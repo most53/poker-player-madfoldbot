@@ -37,11 +37,13 @@ module.exports = {
             pairs[our_cards[1]['rank']]++;
         }
 
-        for (var cc in community_cards) {
-            if (typeof(pairs[community_cards[cc]['rank']]) == 'undefined') {
-                pairs[community_cards[cc]['rank']] = 1;
-            } else {
-                pairs[community_cards[cc]['rank']]++;
+        if (typeof community_cards != 'undefined') {
+            for (var cc in community_cards) {
+                if (typeof(pairs[community_cards[cc]['rank']]) == 'undefined') {
+                    pairs[community_cards[cc]['rank']] = 1;
+                } else {
+                    pairs[community_cards[cc]['rank']] += 1;
+                }
             }
         }
 
