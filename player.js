@@ -76,9 +76,19 @@ module.exports = {
 
         cards = cards.concat(community_cards);
 
-        console.log("ALL CARDS");
-        console.log(cards);
+        var pairs = [];
+        for (var c in cards) {
+            if (typeof pairs[cards[c]['rank']] == 'undefined') {
+                pairs[cards[c]['rank']] = 1;
+            } else {
+                pairs[cards[c]['rank']]++;
+            }
+        }
 
+        console.log("ALL PAIRS");
+        console.log(pairs);
+
+        return pairs;
 
     }
 };
