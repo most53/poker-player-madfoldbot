@@ -108,7 +108,7 @@ module.exports = {
         var players = game_state.players;
 
         for (var i in players) {
-            if (players[i].status == "active" && players[i].stack == 0 && players[i].bet > 200) {
+            if (i != game_state.in_action && players[i].status == "active" && players[i].stack == 0 && players[i].bet > 200) {
                 return true;
             }
         }
