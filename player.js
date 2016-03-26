@@ -60,7 +60,7 @@ module.exports = {
             } else {
                 if (toNum(myself.hole_cards[1].rank) > 9 && toNum(myself.hole_cards[0].rank) > 9) {
                     console.log('HIGH CARDS. DOING CALL');
-                    return call;
+                    return myself.stack;
                 }
 
                 if (compute_chip_factor(game_state) > 3) {
