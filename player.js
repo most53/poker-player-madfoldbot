@@ -3,7 +3,8 @@ module.exports = {
     VERSION: "Default JavaScript folding player",
 
     bet_request: function (game_state, bet) {
-        this.getPairs(game_state);
+        console.log(this.strategy1(game_state, bet));
+        //this.getPairs(game_state);
         return this.strategy1(game_state, bet);
     },
 
