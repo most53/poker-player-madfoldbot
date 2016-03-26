@@ -27,7 +27,30 @@ module.exports = {
         var all_cards = this.getAllCards(game_state);
         var myself = game_state.players[game_state.in_action];
         var call = game_state.current_buy_in - myself["bet"];
+
+        var isAllIn = this.isAllIn(game_state);
         console.log('CURRENT CALL: ' + call);
+
+        if (isAllIn) {
+            console.log("WARNING - ALL IN!!!");
+
+            if (game_state.community_cards.length < 1) {
+                if (
+                    (myself.hole_cards[0].rank == 'A' && myself.hole_cards[1].rank == 'A') ||
+                    (myself.hole_cards[0].rank == 'K' && myself.hole_cards[1].rank == 'K') ||
+                    (myself.hole_cards[0].rank == 'Q' && myself.hole_cards[1].rank == 'Q') ||
+                    (myself.hole_cards[0].rank == 'A' && myself.hole_cards[1].rank == 'K') ||
+                    (myself.hole_cards[0].rank == 'K' && myself.hole_cards[1].rank == 'A')
+                ) {
+                    return call;
+                } else {
+                    return 0;
+                }
+            }
+        } else {
+
+        }
+
 
         if (game_state.community_cards.length < 1) {
             console.log('PREFLOP');
@@ -79,6 +102,18 @@ module.exports = {
         }
 
         return call;
+    },
+
+    isAllIn: function (game_state) {
+        var players = game_state.players;
+
+        for (var i in players) {
+            if (players[i].status == "active" && players[i].stack == 0 && players[i].bet > 200) {
+                return true;
+            }
+        }
+
+        return false;
     },
 
     getAllCards: function (game_state) {
