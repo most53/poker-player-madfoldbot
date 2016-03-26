@@ -56,7 +56,7 @@ module.exports = {
 
         if (our_cards[0]['rank'] == our_cards[1]['rank']) {
             console.log('HAS PAIR!');
-            current_bet += 300;
+            current_bet += 100;
         }
 
         this.getPairs();
