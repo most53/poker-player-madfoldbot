@@ -68,9 +68,12 @@ module.exports = {
                 console.log('LAME CARDS');
                 return 0;
             } else {
+                if (toNum(myself.hole_cards[1].rank) > 10 && toNum(myself.hole_cards[0].rank) > 10 && myself.hole_cards[0].suit == myself.hole_cards[1].suit) {
+                    return myself.stack;
+                }
                 if (toNum(myself.hole_cards[1].rank) > 11 && toNum(myself.hole_cards[0].rank) > 11) {
                     console.log('HIGH CARDS. DOING CALL');
-                    return myself.stack;
+                    return call + 100;
                 }
 
                 if (myself.hole_cards[0].suit == myself.hole_cards[1].suit && ((toNum(myself.hole_cards[1].rank) > 9 || toNum(myself.hole_cards[0].rank) > 9))) {
