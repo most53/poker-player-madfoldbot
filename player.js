@@ -1,6 +1,6 @@
 var rank = require('./rank');
 
-Array.prototype.contains = function(element){
+Array.prototype.contains = function (element) {
     return this.indexOf(element) > -1;
 };
 
@@ -16,14 +16,14 @@ module.exports = {
 
     },
 
-    strategy1: function(game_state, bet) {
+    strategy1: function (game_state, bet) {
         var our_bet = this.getBet(game_state);
         console.log('OUR BET: ' + our_bet);
 
         bet(our_bet);
     },
 
-    getBet: function(game_state) {
+    getBet: function (game_state) {
         var all_cards = this.getAllCards(game_state);
         var myself = game_state.players[game_state.in_action];
         var call = game_state.current_buy_in - myself["bet"];
@@ -51,7 +51,7 @@ module.exports = {
             }
         }
 
-        var our_hand =rank.rank(all_cards);
+        var our_hand = rank.rank(all_cards);
 
         console.log('OUR HAND');
         console.log(our_hand);
@@ -113,9 +113,11 @@ function toNum(c) {
 }
 
 function lameCards(cards) {
-    if (
-        (toNum(cards[0].rank) < 4 || toNum(cards[1].rank) < 4) &&
-        cards[0].rank != cards[1].rank
+    if (cards[0].rank == 'A' || cards[1].rank == 'A') {
+        return false;
+    }
+    else if (
+        (toNum(cards[0].rank) < 4 || toNum(cards[1].rank) < 4) && cards[0].rank != cards[1].rank
     ) {
         return true
     } else {
