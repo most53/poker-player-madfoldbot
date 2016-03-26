@@ -59,6 +59,8 @@ module.exports = {
             current_bet += 300;
         }
 
+        this.getPairs();
+
         return bet(current_bet);
     },
 
