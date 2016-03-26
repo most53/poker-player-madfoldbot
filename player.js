@@ -105,7 +105,7 @@ module.exports = {
         }
 
         if (our_hand.contains('pair')) {
-            return 0;
+            return 10;
         }
 
         return 0;
