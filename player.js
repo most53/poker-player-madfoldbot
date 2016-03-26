@@ -11,6 +11,7 @@ module.exports = {
             }
         }
         console.log(our_cards);
+        console.log(game_state.community_cardscomm);
 
         if (our_cards[0]['rank'] == our_cards[1]['rank']) {
             console.log('HAS PAIR!');
