@@ -149,14 +149,14 @@ function toNum(c) {
 }
 
 function lameCards(cards) {
-    if (
+   /* if (
         toNum(cards[0].rank) >= 12 || toNum(cards[1].rank) >= 12
     ) {
         return false;
     } else if (cards[0].rank == 'A' || cards[1].rank == 'A') {
         return false;
     }
-    else if (
+    else */ if (
         (toNum(cards[0].rank) < 4 || toNum(cards[1].rank) < 4) && cards[0].rank != cards[1].rank
     ) {
         return true
