@@ -74,11 +74,10 @@ module.exports = {
             }
         }
 
-        cards.concat(community_cards);
+        cards = cards.concat(community_cards);
 
         console.log("ALL CARDS");
         console.log(cards);
-       // console.log(game_state.community_cards);
 
 
     }
