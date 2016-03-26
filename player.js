@@ -156,7 +156,7 @@ function lameCards(cards) {
      }
      else */
     if (
-        (toNum(cards[0].rank) < 4 || toNum(cards[1].rank) < 4) && cards[0].rank != cards[1].rank
+        (toNum(cards[0].rank) < 7 || toNum(cards[1].rank) < 7) && cards[0].rank != cards[1].rank
     ) {
         return true
     } else {
